@@ -1,8 +1,17 @@
 ---
 - name: Copy SSH Public Key to Target Node
   hosts: all
+  become: yes
   tasks:
-    - name: Add SSH key to authorized_keys
+    - name: Ensure .ssh directory exists
+      file:
+        path: "/home/{{ target_user }}/.ssh"
+        state: directory
+        mode: '0700'
+        owner: "{{ target_user }}"
+        group: "{{ target_user }}"
+
+    - name: Add SSH public key to authorized_keys
       authorized_key:
         user: "{{ target_user }}"
         state: present
