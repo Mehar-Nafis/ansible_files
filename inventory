@@ -1,2 +1,2 @@
-[all]
-34.56.77.73 ansible_ssh_user=mehar_n
+[web]
+10.128.0.62 ansible_user=mehar_n ansible_ssh_private_key_file=.keys/vm_keys_dev
