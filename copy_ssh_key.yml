@@ -1,0 +1,9 @@
+---
+- name: Copy SSH Public Key to Target Node
+  hosts: all
+  tasks:
+    - name: Add SSH key to authorized_keys
+      authorized_key:
+        user: "{{ target_user }}"
+        state: present
+        key: "{{ ssh_public_key }}"
