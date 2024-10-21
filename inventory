@@ -1,2 +1,2 @@
 [web]
-10.128.0.62 ansible_user=mehar_n ansible_ssh_private_key_file=.keys/vm_keys_dev
+10.128.0.62 ansible_user=mehar_n ansible_ssh_private_key_file=/home/mehar_n/.ssh/id_rsa
